@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Test;
 
 /*
 |--------------------------------------------------------------------------
