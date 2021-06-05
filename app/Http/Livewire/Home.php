@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\Component;
 use App\Models\League;
 use App\Models\Product;
-use Livewire\Component;
 
 class Home extends Component
 {
@@ -12,7 +12,7 @@ class Home extends Component
     {
         return view('livewire.home', [
             'leagues' => League::all(),
-            'products' => Product::take(5)->get()
+            'products' => Product::take(6)->get()
         ]);
     }
 }

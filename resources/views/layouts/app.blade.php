@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,31 +11,26 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ url('css/custom.css') }}" rel="stylesheet">
-    <link href="{{ url('fontawesome/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome\css\all.min.css') }}" rel="stylesheet">
     @livewireStyles
 </head>
-
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
         <livewire:navbar />
         <main class="py-4">
-            <div class="mx-auto">
-                @yield('content')
-                {{ isset($slot) ? $slot : null }}
+            @yield('content')
+            <div class="container">
+                {{isset($slot) ? $slot : null}}
             </div>
         </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
-        data-turbolinks-eval="false" data-turbo-eval="false"></script>
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 </body>
-
 <footer>    
     @include('layouts.footer')
 </footer>
-
 </html>

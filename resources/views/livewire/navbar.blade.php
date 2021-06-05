@@ -5,7 +5,7 @@
             <div class="flex justify-between items-center">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Laravel') }}
+                        <img src="{{ asset('img/asset/logo/logo1.png') }}" class="w-20" alt="">
                     </a>
                 </div>
                 <div @click.away="open = false" class="mb-1 ml-5 relative" x-data="{ open: false }">
@@ -30,8 +30,11 @@
                         <div class="px-2 py-2 bg-white rounded-md shadow">
                             @foreach ($leagues as $league)
                                 <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                    href="#">{{ $league->league_name }}</a>
+                                    href="{{ route('product-league', $league->id) }}">{{ $league->league_name }}</a>
                             @endforeach
+                            <hr>
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                    href="{{ route('product-index') }}">All Products</a>
                         </div>
                     </div>
                 </div>
