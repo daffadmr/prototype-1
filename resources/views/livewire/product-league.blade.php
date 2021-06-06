@@ -2,7 +2,7 @@
     <section class="index-of-product-based-on-league my-5">
         <p class="text-3xl mt-4 font-bold">{{ $title }} Jersey</p>
         <input wire:model="search" type="text" class="border-2 form-input mt-4 w-72" placeholder="Search Product">
-        <div class="p-4 flex flex-wrap items-start">
+        <div class="p-4 flex flex-wrap items-start justify-center">
             @foreach ($product as $produk)
                 <a href="{{ route('product-detail', $produk->id )}}">
                     <div
