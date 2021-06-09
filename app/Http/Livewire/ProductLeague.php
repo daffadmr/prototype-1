@@ -29,7 +29,7 @@ class ProductLeague extends Component
     public function render()
     {
         return view('livewire.product-league', [
-            'product' => Product::where('league_id', $this->league->id)->where('name','like','%'.$this->search.'%')->paginate(6),
+            'product' => Product::where('league_id', $this->league->id)->where('name','like','%'.$this->search.'%')->paginate(8),
             'title' => $this->league->league_name
         ]);
     }

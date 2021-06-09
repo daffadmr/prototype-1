@@ -174,5 +174,12 @@ class ProductSeeder extends Seeder
             'product_image' => 'bundesliga_nameset.jpg',
             'league_id' => 2
         ]);
+
+        DB::table('products')->insert([
+            'name' => 'RB Leipzig Home 2020 / 2021',
+            'price' => '999000',
+            'product_image' => 'leipzig_home.png',
+            'league_id' => 2
+        ]);
     }
 }

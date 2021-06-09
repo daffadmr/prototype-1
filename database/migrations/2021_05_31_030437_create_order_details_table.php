@@ -17,6 +17,7 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
             $table->integer('total_order');
             $table->string('note')->nullable();
+            $table->string('size');
             $table->integer('product_id');
             $table->integer('order_id');
             $table->timestamps();
