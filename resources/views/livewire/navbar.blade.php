@@ -61,7 +61,7 @@
 
             @else
             <a class="px-4 py-2 mt-2 text-sm font-semibold text-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                    href="#"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+                    href="{{ route('cart') }}"><i class="fas fa-shopping-cart"></i> Keranjang</a>
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-white font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">

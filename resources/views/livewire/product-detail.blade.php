@@ -12,18 +12,27 @@
             </div>
         </div>
 
+        <div>
+            <div>
+                @if(session()->has('message'))
+                <div class="border border-green-400 rounded-b bg-green-100 px-4 py-3 text-green-700">
+                    {{ session('message') }}
+                </div>
+                @endif
+            </div>
+        </div>
+
         <p class="text-3xl mt-4 font-bold">Product Detail</p>
 
         <div class="container px-0 py-20 mx-auto">
-            <div class="w-4/5 mx-auto flex flex-wrap">
+            <div class="mx-auto flex flex-wrap">
                 <img alt="jersey" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="{{ url('img/asset/jersey/') }}/{{ $product->product_image }}">
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"> {{$product->name}}</h1>
-                    <div class="flex mb-2">
-                    
-
                         <form wire:submit.prevent="shoppingCart">
+                            <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"> {{$product->name}}</h1>
+                            <div class="flex mb-2">
+    
                             </div>
                             <p class="leading-relaxed">
                             League <img src="{{ url('img/asset/liga/') }}/{{ $product->leagues->league_image }}" class="w-16 mt-1" alt=""> <br>
@@ -43,18 +52,18 @@
                                 <span class="mr-3">Quantity</span>
                                 <div class="relative">
                                 <select wire:model="quantity" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-black text-base pl-3 pr-10">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>11</option>
-                                    <option>12</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
                                 </select>
                                     
 
@@ -73,10 +82,11 @@
                                 <span class="mr-3">Size</span>
                                 <div class="relative">
                                 <select wire:model="size" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-black text-base pl-3 pr-10">
-                                    <option>S</option>
-                                    <option>M</option>
-                                    <option>XL</option>
-                                    <option>XXL</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
                                 </select>
 
                                 <span class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
@@ -107,8 +117,6 @@
                                 @else
                                     <button type="button" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded opacity-50 cursor-not-allowed"> <i class="fas fa-times"></i> </button>
                                 @endif
-                                    <br>
-
                             </div>
                         </form>
                 </div>
