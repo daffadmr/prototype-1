@@ -60,7 +60,7 @@ class ProductDetail extends Component
 
         $this->emit('shoppingCart');
         session()->flash('message', 'Sukses Masuk Keranjang');
-
+        return redirect()->back();
     }
 
     public function render()
