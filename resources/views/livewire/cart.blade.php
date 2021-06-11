@@ -1,5 +1,14 @@
 <div>
     <section class="cart my-5">
+        <div class="lg:container lg:w-full lg:ml-9 text-black text-sm">
+            <ul class="flex">
+                <li><a href="{{ route('home') }}" class="underline">Home</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li class="font-bold">Keranjang</li>
+            </ul>
+            <p class="text-3xl mt-4 font-bold">Keranjang</p>
+        </div>
+        
         <div class="flex justify-center my-6">
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                 <div class="flex-1">
@@ -27,12 +36,12 @@
                         <tbody>
                             @forelse ($order_details as $order_detail)
                                 <tr class="border-b">
-                                    <td>
+                                    <td class="pr-4">
                                         <button wire:click="hapus({{ $order_detail->id }})">
                                             <i class="text-red-700 fas fa-trash"></i>
                                         </button>
                                     </td>
-                                    <td class="hidden py-8 md:table-cell">
+                                    <td class="hidden py-10 md:table-cell">
                                         <a href="#">
                                             <img src="{{ url('img/asset/jersey/') }}/{{ $order_detail->product->product_image }}"
                                                 class="w-28 rounded" alt="Thumbnail">
@@ -46,7 +55,7 @@
                                             <p>Note: -</p>
                                         @endif
                                     </td>
-                                    <td class="text-center">
+                                    <td class="text-center py-8">
                                         <span class="text-sm lg:text-base font-medium">
                                             {{ $order_detail->total_order }}
                                         </span>
@@ -128,7 +137,7 @@
                                             Total
                                         </div>
                                         <div class="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                                            Rp. {{ number_format($orders->total_price + 10000) }}
+                                            Rp. {{ number_format($orders->total_price + $ongkir) }}
                                         </div>
                                     </div>
                                     <a href="#">
