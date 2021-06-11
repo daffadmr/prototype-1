@@ -1,5 +1,5 @@
 <div>
-    <section class="index-of-product my-5">
+    <section class="container index-of-product my-5">
     <div class="w-full">
         <div class="py-3 mb-4 text-black text-sm">
             <ul class="flex">
