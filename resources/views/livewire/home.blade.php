@@ -33,7 +33,7 @@
                             <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3">
                             </div>
                             <img class="relative"
-                                src="{{ url('img/asset/jersey/') }}/{{ $product->product_image }}">
+                                src="{{asset('storage/images/'.$product->product_image)}}">
                         </div>
                         <div class="pt-5 px-2 relative text-center">
                             <h4 class="font-semibold">{{ $product->name }}</h4>

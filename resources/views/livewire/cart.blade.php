@@ -43,7 +43,7 @@
                                     </td>
                                     <td class="hidden py-8 md:table-cell">
                                         <a href="#">
-                                            <img src="{{ url('img/asset/jersey/') }}/{{ $order_detail->product->product_image }}"
+                                            <img src="{{asset('storage/images/'.$order_detail->product->product_image)}}"
                                                 class="w-28 rounded" alt="Thumbnail">
                                         </a>
                                     </td>
@@ -74,7 +74,7 @@
                         </tbody>
                     @empty
                         <tr>
-                            <td colspan="6" align="center"><h1 class="mt-4 text-2xl">Data Kosong</h1></td>
+                            <td colspan="6" align="center">Data Kosong</td>
                         </tr>
                         @endforelse
                     </table>

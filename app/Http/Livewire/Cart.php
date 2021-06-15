@@ -62,8 +62,9 @@ class Cart extends Component
 
     public function render()
     {
-        if(Auth::user())
-        {
+        if(Auth::user()->is_admin == 0) {
+            if(Auth::user())
+            {
             $this->orders = Order::where('user_id', Auth::user()->id)->where('status', 0)->first();
             if($this->orders)
             {
@@ -74,5 +75,8 @@ class Cart extends Component
             'orders' => $this->orders,
             'order_details' => $this->order_details
         ]);
+        } else {
+            abort(404);
+        }
     }
 }

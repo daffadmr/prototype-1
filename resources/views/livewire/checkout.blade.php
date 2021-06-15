@@ -60,10 +60,12 @@
                             class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-blue-500 rounded-full shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
                                 <span class="ml-2 mt-5px"><i class="fas fa-edit"></i> Edit Alamat</span>
                         </a>
-                        <a href="{{ route('transaction') }}"
-                        class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-green-500 rounded-full shadow item-center hover:bg-green-700 focus:shadow-outline focus:outline-none">
-                            <span class="ml-2 mt-5px"><i class="fas fa-credit-card"></i> Proses Transaksi</span>
-                        </a>
+                        @if(!empty($order->address))
+                            <a href="{{ route('pembayaran') }}"
+                            class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-green-500 rounded-full shadow item-center hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                                <span class="ml-2 mt-5px"><i class="fas fa-credit-card"></i> Proses Transaksi</span>
+                            </a>
+                        @endif
                    </div>
                 </div>
             </div>

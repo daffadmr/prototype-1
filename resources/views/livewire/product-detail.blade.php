@@ -26,7 +26,7 @@
 
         <div class="container px-0 py-4 mx-auto">
             <div class="mx-auto flex flex-wrap">
-                <img alt="jersey" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="{{ url('img/asset/jersey/') }}/{{ $product->product_image }}">
+                <img alt="jersey" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="{{asset('storage/images/'.$product->product_image)}}">
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     
                         <form wire:submit.prevent="shoppingCart">
@@ -112,10 +112,12 @@
                             <div class="flex">
                                 <span class="title-font font-medium text-2xl text-gray-900">Rp. {{ number_format($product->price) }}</span>
 
-                                @if($product->is_ready == 1) 
-                                    <button type="submit" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"> <i class="fas fa-shopping-cart"></i> </button>
-                                @else
-                                    <button type="button" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded opacity-50 cursor-not-allowed"> <i class="fas fa-times"></i> </button>
+                                @if(Auth::user()->is_admin == 0)
+                                    @if($product->is_ready == 1) 
+                                        <button type="submit" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"> <i class="fas fa-shopping-cart"></i> </button>
+                                    @else
+                                        <button type="button" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded opacity-50 cursor-not-allowed"> <i class="fas fa-times"></i> </button>
+                                    @endif
                                 @endif
                             </div>
                         </form>

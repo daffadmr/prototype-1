@@ -15,7 +15,7 @@
                     <hr>
                     <div class="p-4">
                         <div class="flex justify-center py-4">
-                            <div class="shadow-2xl">{!! QrCode::size(200)->generate(Request::url()); !!}</div>
+                            <div class="shadow-2xl">{!! QrCode::size(250)->generate(Request::url()); !!}</div>
                         </div>
                         
                     <div class="flex justify-end">

@@ -10,8 +10,14 @@ use App\Http\Livewire\Checkout;
 use App\Http\Livewire\UserProfile;
 use App\Http\Livewire\EditProfile;
 use App\Http\Livewire\EditAddress;
+use App\Http\LIvewire\TransactionHistory;
+use App\Http\Livewire\AdminDashboard;
+use App\Http\Livewire\AdminOrderDashboard;
+use App\Http\Livewire\EditProduct;
+use App\Http\Livewire\CreateProduct;
+use App\Http\Livewire\EditTransaction;
+use App\Http\Livewire\DetailTransaction;
 use App\Http\Livewire\Pembayaran;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +29,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Auth::routes();
 
@@ -37,6 +44,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart', Cart::class)->name('cart');
     Route::get('/cart/checkout/{id}', Checkout::class)->name('checkout');
     Route::get('/cart/checkout/edit-recipient/{id}', EditAddress::class)->name('edit-recipient');
+    Route::get('/all-transaction', TransactionHistory::class)->name('all-transaction');
+    Route::get('/admin/product', AdminDashboard::class)->name('admin-product');
+    Route::get('/admin/order', AdminOrderDashboard::class)->name('admin-order');
+    Route::get('/admin/edit-product/{id}', EditProduct::class)->name('edit-product');
+    Route::get('/admin/create-product', CreateProduct::class)->name('create-product');
+    Route::get('/admin/order/edit-transaction/{id}', EditTransaction::class)->name('edit-transaction');
+    Route::get('/admin/order/detail/{id}', DetailTransaction::class)->name('detail-transaction');
     Route::get('/pembayaran', Pembayaran::class)->name('pembayaran');
 });
-

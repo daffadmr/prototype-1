@@ -9,6 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $table = 'products';
+    protected $guarded = [];
+
     public function leagues() {
         return $this->belongsTo(League::class, 'league_id', 'id');
     }

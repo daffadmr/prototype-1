@@ -68,7 +68,7 @@ class ProductDetail extends Component
             'total_price' => $total_price
         ]);
 
-        $this->emit('shoppingCart');
+        
         session()->flash('message', 'Sukses Masuk Keranjang');
         return redirect()->back();
     }

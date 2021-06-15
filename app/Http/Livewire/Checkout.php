@@ -3,13 +3,12 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\User;
 use App\Models\Order;
-use Illuminates\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class Checkout extends Component
 {
-    public $order;
+    public $order, $status;
 
     public function mount($id) {
         $pesanan = Order::find($id);
@@ -21,6 +20,10 @@ class Checkout extends Component
 
     public function render()
     {
-        return view('livewire.checkout');
+        if(Auth::user()->is_admin == 0) {
+            return view('livewire.checkout');
+        } else {
+            abort(404);
+        }
     }
 }

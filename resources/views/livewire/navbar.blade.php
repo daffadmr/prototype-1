@@ -60,8 +60,10 @@
                 @endif
 
             @else
-            <a class="px-4 py-2 mt-2 text-sm font-semibold text-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                @if(Auth::user()->is_admin == 0)
+                <a class="px-4 py-2 mt-2 text-sm font-semibold text-white rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     href="{{ route('cart') }}"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+                @endif
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm text-white font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
@@ -81,10 +83,20 @@
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-36">
                         <div class="px-2 py-2 bg-white rounded-md shadow">
+                            @if(Auth::user()->is_admin == 1)
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                 href="{{ route('user-profile', Auth::id()) }}">Profil User</a>
                             <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                                href="#">Transaksi</a>
+                                href="{{ route('admin-product') }}">Dasbor Admin Produk</a>
+                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="{{ route('admin-order') }}">Dasbor Admin Order</a>
+                            @else
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="{{ route('user-profile', Auth::id()) }}">Profil User</a>
+                            
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                href="{{ route('all-transaction') }}">Transaksi</a>
+                            @endif
                             <hr>
                             <a href="{{ route('logout') }}"
                                 class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
