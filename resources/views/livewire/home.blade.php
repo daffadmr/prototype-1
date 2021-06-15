@@ -4,7 +4,7 @@
     </div>
 
     <section class="pilih-liga my-5">
-        <h1 class="sm:text-center lg:text-left font-bold text-3xl">Leagues</h1>
+        <h1 class="sm:text-center lg:text-left font-bold text-3xl">Liga</h1>
         <div class="p-4 flex flex-wrap items-start justify-center">
             @foreach ($leagues as $league)
                 <a href="{{ route('product-league', $league->id) }}">
@@ -23,7 +23,7 @@
     </section>
 
     <section class="champions-jersey">
-        <h1 class="sm:text-center lg:text-left font-bold text-3xl">2020 / 2021 Champions Jersey</h1>
+        <h1 class="sm:text-center lg:text-left font-bold text-3xl">Jersey Para Juara Musim 2020 / 2021</h1>
         <div class="p-4 flex flex-wrap items-start justify-center">
             @foreach ($products as $product)
                 <a href="{{ route('product-detail', $product->id ) }}">

@@ -28,6 +28,9 @@ class ProductDetail extends Component
         }
 
         $total_price = $this->quantity * $this->product->price;
+        $shipping_cost = 0;
+        $courier = "Belum Dipilih";
+        $final_price = $total_price + $shipping_cost;
 
         $order = Order::where('user_id', Auth::user()->id)->where('status', 0)->first();
 
@@ -38,14 +41,21 @@ class ProductDetail extends Component
                 'total_price' => $total_price,
                 'status' => 0,
                 'order_code' => 1,
+                'shipping_costs' => $shipping_cost,
+                'courier' => $courier,
+                'final_price' => $final_price,
+                'name' => Auth::user()->name,
+                'address' => Auth::user()->alamat,
+                'telephone' => Auth::user()->no_hp
             ]);
-
+            
             $order = Order::where('user_id', Auth::user()->id)->where('status', 0)->first();
             $order->order_code = 'INV-'.$order->id;
             $order->update();
         } 
         else {
             $order->total_price = $order->total_price + $total_price;
+            $order->final_price = $order->final_price + $total_price;
             $order->update();
         }
 

@@ -12,6 +12,7 @@ class Cart extends Component
     protected $order;
     protected $order_details = [];
     public $ongkir = 0;
+    public $courier;
 
     public function hapus($id)
     {
@@ -36,6 +37,27 @@ class Cart extends Component
 
     public function tambahOngkir(){
         $this->ongkir = 10000;
+    }
+
+    public function updateCart() {
+        $order = Order::where('user_id', Auth::user()->id)->where('status', 0)->first();
+
+        if($order) {
+            if($order->shipping_costs == 0) {
+                $order->update([
+                    'shipping_costs' => 10000,
+                    'final_price' => $order->final_price + 10000,
+                    'courier' => $this->courier,
+                ]);
+    
+                return redirect()->route('checkout', $order->id);
+            } else {
+                $order->update([
+                    'courier' => $this->courier,
+                ]);
+                return redirect()->route('checkout', $order->id);
+            }
+        }
     }
 
     public function render()

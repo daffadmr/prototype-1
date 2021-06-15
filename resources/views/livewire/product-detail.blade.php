@@ -23,7 +23,7 @@
         </div>
 
         <p class="text-3xl mt-4 font-bold">Product Detail</p>
-        
+
         <div class="container px-0 py-4 mx-auto">
             <div class="mx-auto flex flex-wrap">
                 <img alt="jersey" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="{{ url('img/asset/jersey/') }}/{{ $product->product_image }}">

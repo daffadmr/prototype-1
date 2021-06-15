@@ -19,6 +19,12 @@ class CreateOrdersTable extends Migration
             $table->string('order_code');
             $table->integer('total_price');
             $table->integer('user_id');
+            $table->string('name');
+            $table->string('address');
+            $table->string('telephone');
+            $table->integer('shipping_costs');
+            $table->integer('final_price');
+            $table->string('courier');
             $table->timestamps();
         });
     }
