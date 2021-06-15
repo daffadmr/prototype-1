@@ -86,6 +86,32 @@
                             @endforelse
                             </tbody>
                         </table>
+                        <div class="flex justify-end">
+                            <table class="w-1/2 border-collapse mt-5 p-4"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+                                <thead class="mt-2">
+                                    <tr>
+                                        <th colspan="3">Rincian Harga</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="mt-4">
+                                    <tr>
+                                        <td>Total Harga Beli</td>
+                                        <td>:</td>
+                                        <td class="text-right">Rp. {{ number_format($order_detail->total_price) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ongkos Kirim</td>
+                                        <td>:</td>
+                                        <td class="text-right">Rp. {{ number_format($order->shipping_costs) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yang harus dibayarkan</td>
+                                        <td>:</td>
+                                        <td class="text-right">Rp. {{ number_format($order->final_price) }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                                                         
                     </div>
                 </div>
         </div>
