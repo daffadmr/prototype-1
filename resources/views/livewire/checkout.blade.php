@@ -17,19 +17,20 @@
                     <h1 class="ml-2 font-bold uppercase">Pengiriman</h1>
                 </div>
                 <div class="p-4">
-                    <p>Pesanan seharga <strong>Rp. {{ number_format($order->final_price )}}</strong> ini akan dikirimkan ke:</p>
-                    <table class="mt-3 text-left w-full border-collapse"> 
+                    <p>Pesanan berjumlah <strong>Rp. {{ number_format($order->final_price) }}</strong> ini akan
+                        dikirimkan ke:</p>
+                    <table class="mt-3 text-left w-full border-collapse">
                         <tbody>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Nama Penerima</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{ $order->name }}</td>
+                                <td class="py-4 px-6 border-t border-grey-light">Nama Penerima</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">{{ $order->name }}</td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Alamat Penerima</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">
-                                    @if (!empty($order->address) )
+                                <td class="py-4 px-6 border-t border-grey-light">Alamat Penerima</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">
+                                    @if (!empty($order->address))
                                         <p>{{ $order->address }}</p>
                                     @else
                                         <p>Belum Diisi</p>
@@ -37,10 +38,10 @@
                                 </td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Telepon / No. HP</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">
-                                    @if (!empty($order->telephone) )
+                                <td class="py-4 px-6 border-t border-grey-light">Telepon / No. HP</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">
+                                    @if (!empty($order->telephone))
                                         <p>{{ $order->telephone }}</p>
                                     @else
                                         <p>Belum Diisi</p>
@@ -50,23 +51,23 @@
                         </tbody>
                     </table>
 
-                    
-                   <div class="flex">
+
+                    <div class="flex">
                         <a href="{{ route('cart') }}"
-                        class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-red-500 rounded-full shadow item-center hover:bg-red-700 focus:shadow-outline focus:outline-none">
+                            class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-red-500 rounded-full shadow item-center hover:bg-red-700 focus:shadow-outline focus:outline-none">
                             <span class="ml-2 mt-5px"><i class="fas fa-arrow-left"></i> Kembali</span>
                         </a>
                         <a href="{{ route('edit-recipient', $order->id) }}"
                             class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-blue-500 rounded-full shadow item-center hover:bg-blue-700 focus:shadow-outline focus:outline-none">
-                                <span class="ml-2 mt-5px"><i class="fas fa-edit"></i> Edit Alamat</span>
+                            <span class="ml-2 mt-5px"><i class="fas fa-edit"></i> Edit Alamat</span>
                         </a>
-                        @if(!empty($order->address))
-                            <a href="{{ route('pembayaran') }}"
-                            class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-green-500 rounded-full shadow item-center hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                        @if (!empty($order->address))
+                            <button wire:click="bayar"
+                                class="flex justify-center w-1/3 px-10 py-3 mt-6 mr-2 font-medium text-white uppercase bg-green-500 rounded-full shadow item-center hover:bg-green-700 focus:shadow-outline focus:outline-none">
                                 <span class="ml-2 mt-5px"><i class="fas fa-credit-card"></i> Proses Transaksi</span>
-                            </a>
+                            </button>
                         @endif
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
     </section>
 
     <section class="champions-jersey">
-        <h1 class="sm:text-center lg:text-left font-bold text-3xl">Jersey Para Juara Musim 2020 / 2021</h1>
+        <h1 class="sm:text-center lg:text-left font-bold text-3xl">Jersey Juara Musim 2020 / 2021</h1>
         <div class="p-4 flex flex-wrap items-start justify-center">
             @foreach ($products as $product)
                 <a href="{{ route('product-detail', $product->id ) }}">

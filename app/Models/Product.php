@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
 
     protected $table = 'products';
-    protected $guarded = [];
+    protected $guards = [];
 
     public function leagues() {
         return $this->belongsTo(League::class, 'league_id', 'id');

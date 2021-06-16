@@ -5,7 +5,7 @@
                     <ul class="flex">
                         <li><a href="{{ route('home') }}" class="underline">Home</a></li>
                         <li><span class="mx-2">/</span></li>
-                        <li><a href="{{ route('admin-order') }}" class="underline">Halaman Admin (Order)</a></li>
+                        <li><a href="{{ route('all-transaction') }}" class="underline">Transaksi Anda</a></li>
                         <li><span class="mx-2">/</span></li>
                         <li class="font-bold">Detail Transaksi</li>
                     </ul>
@@ -47,7 +47,7 @@
                         <h1 class="ml-2 mb-3 font-bold uppercase">Rincian Pembelian</h1>
                         <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
                             <thead>
-                                <tr>
+                                <tr >
                                 <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">No.</th>
                                 <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Produk</th>
                                 <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Harga</th>

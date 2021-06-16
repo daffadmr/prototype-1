@@ -20,26 +20,26 @@
                         <table class="text-left w-full mt-3 border-collapse"> 
                                 <tbody>
                                     <tr class="hover:bg-grey-lighter">
-                                        <td class="py-4 px-6 border-b border-grey-light">Name</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">{{ $user->name }}</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">Name</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">{{ $user->name }}</td>
                                     </tr>
                                     <tr class="hover:bg-grey-lighter">
-                                        <td class="py-4 px-6 border-b border-grey-light">Mail Address</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">{{ $user->email }}</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">Mail Address</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">{{ $user->email }}</td>
                                     </tr>
                                     <tr class="hover:bg-grey-lighter">
-                                        <td class="py-4 px-6 border-b border-grey-light">Address</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">
+                                        <td class="py-4 px-6 border-t border-grey-light">Address</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">
                                         <textarea wire:model="address" class="w-full px-3 py-2 text-gray-700 border-2 rounded-lg focus:outline-none focus:border-black" placeholder="Your Address" rows="4"></textarea>                                    
                                         </td>
                                     </tr>
                                     <tr class="hover:bg-grey-lighter">
-                                        <td class="py-4 px-6 border-b border-grey-light">Telephone</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                        <td class="py-4 px-6 border-b border-grey-light">
+                                        <td class="py-4 px-6 border-t border-grey-light">Telephone</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                        <td class="py-4 px-6 border-t border-grey-light">
                                         <input type="text" wire:model="telephone" class="w-full px-3 py-2 border-2 rounded-lg text-gray-700 focus:outline-none focus:border-black" placeholder="Your Telephone Number">
                                         </td>
                                     </tr>

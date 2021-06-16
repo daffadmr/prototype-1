@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+<main class="sm:container sm:mx-auto sm:max-w-2xl sm:mt-10">
     <div class="flex">
         <div class="w-full">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-lg">
@@ -47,7 +47,7 @@
 
                     <div class="flex items-center">
                         <label class="inline-flex items-center text-sm text-gray-700" for="remember">
-                            <input type="checkbox" name="remember" id="remember" class="form-checkbox"
+                            <input type="checkbox" name="remember" id="remember" class="border form-checkbox"
                                 {{ old('remember') ? 'checked' : '' }}>
                             <span class="ml-2">{{ __('Remember Me') }}</span>
                         </label>

@@ -24,23 +24,23 @@
                         <table class="mt-3 text-left w-full border-collapse"> 
                             <tbody>
                                 <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">Nama Penerima</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">
+                                    <td class="py-4 px-6 border-t border-grey-light">Nama Penerima</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">
                                     <input type="text" wire:model="name" class="w-full px-3 py-2 border-2 rounded-lg text-gray-700 focus:outline-none focus:border-black" placeholder="Nama Penerima">
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">Alamat Penerima</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">
+                                    <td class="py-4 px-6 border-t border-grey-light">Alamat Penerima</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">
                                         <textarea wire:model="address" class="w-full px-3 py-2 text-gray-700 border-2 rounded-lg focus:outline-none focus:border-black" placeholder="Alamat Penerima" rows="4"></textarea>                                    
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">Telepon / No. HP</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">
+                                    <td class="py-4 px-6 border-t border-grey-light">Telepon / No. HP</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                    <td class="py-4 px-6 border-t border-grey-light">
                                     <input type="text" wire:model="telephone" class="w-full px-3 py-2 border-2 rounded-lg text-gray-700 focus:outline-none focus:border-black" placeholder="Telepon / No. HP Penerima">
                                     </td>
                                 </tr>

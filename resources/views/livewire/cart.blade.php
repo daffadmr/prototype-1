@@ -114,7 +114,7 @@
                                         <h1 class="ml-2 font-bold uppercase">Order Details</h1>
                                     </div>
                                     <div class="p-4">
-                                        <div class="flex justify-between border-b">
+                                        <div class="flex justify-between border-t">
                                             <div
                                                 class="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
                                                 Barang
@@ -123,7 +123,7 @@
                                                 Rp. {{ number_format($orders->total_price) }}
                                             </div>
                                         </div>
-                                        <div class="flex justify-between border-b">
+                                        <div class="flex justify-between border-t">
                                             <div
                                                 class="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
                                                 Ongkos Kirim
@@ -132,7 +132,7 @@
                                                 Rp. {{ number_format($ongkir) }}
                                             </div>
                                         </div>
-                                        <div class="flex justify-between pt-4 border-b">
+                                        <div class="flex justify-between pt-4 border-t">
                                             <div
                                                 class="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
                                                 Total

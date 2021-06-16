@@ -1,5 +1,5 @@
 <div>
-    <section class="profile-of-user my-5">
+    <section class="container profile-of-user my-5">
         <div class="w-full">
             <div class="py-3 mb-4 text-black text-sm">
                 <ul class="flex">
@@ -22,14 +22,14 @@
                                 <td class="py-4 px-6 border-b border-grey-light">{{ $user->name }}</td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Mail Address</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{ $user->email }}</td>
+                                <td class="py-4 px-6 border-t border-grey-light">Mail Address</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">{{ $user->email }}</td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Address</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">
+                                <td class="py-4 px-6 border-t border-grey-light">Address</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">
                                     @if (!empty($user->alamat) )
                                         <p>{{ $user->alamat }}</p>
                                     @else
@@ -38,9 +38,9 @@
                                 </td>
                             </tr>
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">Telephone</td>
-                                <td class="py-4 px-6 border-b border-grey-light">:</td>
-                                <td class="py-4 px-6 border-b border-grey-light">
+                                <td class="py-4 px-6 border-t border-grey-light">Telephone</td>
+                                <td class="py-4 px-6 border-t border-grey-light">:</td>
+                                <td class="py-4 px-6 border-t border-grey-light">
                                     @if (!empty($user->no_hp) )
                                         <p>{{ $user->no_hp }}</p>
                                     @else

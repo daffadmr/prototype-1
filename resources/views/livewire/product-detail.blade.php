@@ -1,5 +1,5 @@
 <div>
-    <section class="text-gray-700 body-font my-5 bg-gray-100">
+    <section class="container text-gray-700 body-font my-5 bg-gray-100">
         <div class="w-full">
             <div class="py-3 mb-4 text-black text-sm">
                 <ul class="flex">

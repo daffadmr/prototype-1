@@ -1,5 +1,5 @@
 <div>
-    <section class="admin my-5">
+    <section class="container admin my-5">
     <div class="w-full">
             <div class="py-3 mb-4 text-black text-sm">
                 <ul class="flex">
@@ -39,20 +39,20 @@
             <tbody>
             @foreach($products as $index => $product)
                 <tr>
-                <td class="py-4 px-6 border-b border-grey-light">{{ $index + 1 }}</td>
-                <td class="py-4 px-6 border-b border-grey-light">{{ $product->name }}</td>
-                <td class="py-4 px-6 border-b border-grey-light">
+                <td class="py-4 px-6 border-t border-grey-light">{{ $index + 1 }}</td>
+                <td class="py-4 px-6 border-t border-grey-light">{{ $product->name }}</td>
+                <td class="py-4 px-6 border-t border-grey-light">
                     <img src="{{asset('storage/images/'.$product->product_image)}}" class="w-28 rounded" alt="">
                 </td>
-                <td class="py-4 px-6 border-b border-grey-light">{{ $product->price }}</td>
-                <td class="py-4 px-6 border-b border-grey-light">
+                <td class="py-4 px-6 border-t border-grey-light">{{ $product->price }}</td>
+                <td class="py-4 px-6 border-t border-grey-light">
                     @if($product->is_ready == 1)
                         Ready Stock
                     @else
                         Stok Kosong
                     @endif
                 </td>
-                <td class="py-4 px-6 border-b border-grey-light">
+                <td class="py-4 px-6 border-t border-grey-light">
                     <a href="{{ route('product-detail', $product->id ) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xl bg-green hover:bg-green-dark"><i class="fas fa-eye"></i></a>
                     <a href="{{ route('edit-product', $product->id) }}" class="text-grey-lighter font-bold py-1 px-3 rounded text-xl bg-blue hover:bg-blue-dark"><i class="fas fa-edit"></i></a>
                     <button type="button" onclick="return confirm('Apakah yakin ingin menghapus produk ini?') || event.stopImmediatePropagation()" wire:click="delete({{ $product->id }})" class="text-grey-lighter font-bold py-1 px-3 rounded text-xl bg-blue hover:bg-blue-dark"><i class="text-red-500 fas fa-trash"></i></a>
