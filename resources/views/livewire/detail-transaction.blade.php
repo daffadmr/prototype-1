@@ -97,7 +97,7 @@
                                     <tr>
                                         <td>Total Harga Beli</td>
                                         <td>:</td>
-                                        <td class="text-right">Rp. {{ number_format($order_detail->total_price) }}</td>
+                                        <td class="text-right">Rp. {{ number_format($order->total_price) }}</td>
                                     </tr>
                                     <tr>
                                         <td>Ongkos Kirim</td>
