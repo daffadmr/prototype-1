@@ -2,7 +2,7 @@
     <section class="pembayaran-sukses my-5">
         <div class="lg:container lg:w-full lg:ml-9 text-black text-sm">
             <ul class="flex">
-                <li><a href="{{ route('home') }}" class="underline">Home</a></li>
+                <li><a href="{{ route('all-transaction') }}" class="underline">Home</a></li>
                 <li><span class="mx-2">/</span></li>
                 <li><a href="#" class="underline">Pembayaran Sukses</a></li>
                 <li><span class="mx-2">/</span></li>
