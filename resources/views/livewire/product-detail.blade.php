@@ -111,12 +111,15 @@
 
                             <div class="flex">
                                 <span class="title-font font-medium text-2xl text-gray-900">Rp. {{ number_format($product->price) }}</span>
-
-                                @if(Auth::user()->is_admin == 0)
-                                    @if($product->is_ready == 1) 
-                                        <button type="submit" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"> <i class="fas fa-shopping-cart"></i> </button>
+                                @if (!Auth::user())
+                                <button class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"><a href="{{ route('login') }}"><i class="fas fa-shopping-cart"></i></a></button>
                                     @else
-                                        <button type="button" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded opacity-50 cursor-not-allowed"> <i class="fas fa-times"></i> </button>
+                                    @if(Auth::user()->is_admin == 0)
+                                        @if($product->is_ready == 1) 
+                                            <button type="submit" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"> <i class="fas fa-shopping-cart"></i> </button>
+                                        @else
+                                            <button type="button" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded opacity-50 cursor-not-allowed"> <i class="fas fa-times"></i> </button>
+                                        @endif
                                     @endif
                                 @endif
                             </div>
