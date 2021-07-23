@@ -47,10 +47,11 @@
                         <h1 class="ml-2 mb-3 font-bold uppercase">Rincian Pembelian</h1>
                         <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
                             <thead>
-                                <tr>
+                                <tr >
                                 <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">No.</th>
-                                <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Produk</th>
-                                <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Harga</th>
+                                <th colspan=2 class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-center text-grey-dark border-b border-grey-light">Produk</th>
+                                <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark text-center border-b border-grey-light">Qty</th>
+                                <th class="py-4 px-6 bg-gray-300 font-bold uppercase text-sm text-grey-dark text-center border-b border-grey-light">Harga</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,13 +59,27 @@
                                 <tr class="hover:bg-grey-lighter">
                                     <?php $products = \App\Models\Product::where('id', $order_detail->product_id)->get(); ?>
                                     <td class="py-4 px-6 border-t border-grey-light">{{ $index + 1 }}</td>
+                                    <td class="hidden py-8 md:table-cell border-t">
+                                        <a href="#">
+                                            <img src="{{asset('storage/images/'.$order_detail->product->product_image)}}"
+                                                class="w-28 rounded" alt="Thumbnail">
+                                        </a>
+                                    </td>
                                     <td class="py-4 px-6 border-t border-grey-light">
-                                        
                                         @foreach($products as $product)
-                                            {{ $product->name }}
+                                            {{ $product->name }} </strong> - Size: <strong>{{ $order_detail->size }}</strong><br>
+                                            <br>Catatan:
+                                                @if (!empty($order_detail->note) )
+                                                    {{ $order_detail->note }}
+                                                @else
+                                                    -
+                                                @endif
                                         @endforeach
                                     </td>
-                                    <td class="py-4 px-6 border-t border-grey-light">Rp. {{ number_format($order_detail->total_price) }}</td>
+                                    <td class="border-t text-center">
+                                        {{ $order_detail->total_order }}
+                                    </td>
+                                    <td class="py-4 px-6 border-t border-grey-light text-center">Rp. {{ number_format($order_detail->total_price) }}</td>
                                     @endforeach
                                 </tr>
                             </tbody>

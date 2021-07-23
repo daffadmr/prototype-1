@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class EditAddress extends Component
 {
@@ -37,6 +38,10 @@ class EditAddress extends Component
 
     public function render()
     {
-        return view('livewire.edit-address');
+        if(Auth::user()->is_admin == 0) {
+            return view('livewire.edit-address');
+        } else {
+            abort(404);
+        }
     }
 }

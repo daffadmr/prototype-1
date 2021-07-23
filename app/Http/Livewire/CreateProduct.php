@@ -59,3 +59,4 @@ class CreateProduct extends Component
         }
     }
 }
+

@@ -4,7 +4,7 @@
             <ul class="flex">
                 <li><a href="{{ route('all-transaction') }}" class="underline">Home</a></li>
                 <li><span class="mx-2">/</span></li>
-                <li><a href="#" class="underline">Pembayaran Sukses</a></li>
+                <li><a href="#" class="underline">Pembayaran</a></li>
                 <li><span class="mx-2">/</span></li>
                 <li class="font-bold">Pembayaran Sukses</li>                
             </ul>

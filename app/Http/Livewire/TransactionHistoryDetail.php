@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionHistoryDetail extends Component
 {
@@ -19,9 +20,13 @@ class TransactionHistoryDetail extends Component
     }
     public function render()
     {
-            return view('livewire.transaction-history-detail', [
-                'orders' => $this->order,
-                'order_details' => OrderDetail::where('order_id', $this->order->id)->get(),
-            ]);
+            if(Auth::user()->is_admin == 0) {
+                return view('livewire.transaction-history-detail', [
+                    'orders' => $this->order,
+                    'order_details' => OrderDetail::where('order_id', $this->order->id)->get(),
+                ]);
+            } else {
+                abort(404);
+            }
     } 
 }

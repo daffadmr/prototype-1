@@ -22,17 +22,10 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'name' => 'LOSC Lille Home 2020 / 2021',
-            'price' => '899000',
-            'product_image' => 'lille_home.png',
-            'league_id' => 5
-        ]);
-        
-        DB::table('products')->insert([
-            'name' => 'Atl. Madrid Home 2020 / 2021',
+            'name' => 'Bayern Home 2020 / 2021',
             'price' => '1299000',
-            'product_image' => 'atleti_home.png',
-            'league_id' => 4
+            'product_image' => 'bayern_home.png',
+            'league_id' => 2
         ]);
 
         DB::table('products')->insert([
@@ -43,12 +36,19 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'name' => 'Bayern Home 2020 / 2021',
+            'name' => 'Atl. Madrid Home 2020 / 2021',
             'price' => '1299000',
-            'product_image' => 'bayern_home.png',
-            'league_id' => 2
+            'product_image' => 'atleti_home.png',
+            'league_id' => 4
         ]);
 
+        DB::table('products')->insert([
+            'name' => 'LOSC Lille Home 2020 / 2021',
+            'price' => '899000',
+            'product_image' => 'lille_home.png',
+            'league_id' => 5
+        ]);
+        
         DB::table('products')->insert([
             'name' => 'Chelsea Home 2020 / 2021',
             'price' => '1299000',

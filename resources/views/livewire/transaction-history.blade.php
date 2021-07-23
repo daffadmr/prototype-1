@@ -12,7 +12,7 @@
 
         <p class="text-3xl mt-4 font-bold">Transaksi Anda</p>
         <div class="my-6">
-            <p class="text-xl mt-2">{{ Auth::user()->name }}</p>
+            <p class="text-xl mt-2"><strong>{{ Auth::user()->name }}</strong></p>
             <div class="flex justify-center my-6">
                 <div class="flex flex-col rounded-md w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y">
                     <table class="w-full text-sm lg:text-base" cellspacing="0">

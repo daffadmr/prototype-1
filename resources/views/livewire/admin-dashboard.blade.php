@@ -44,7 +44,7 @@
                 <td class="py-4 px-6 border-t border-grey-light">
                     <img src="{{asset('storage/images/'.$product->product_image)}}" class="w-28 rounded" alt="">
                 </td>
-                <td class="py-4 px-6 border-t border-grey-light">{{ $product->price }}</td>
+                <td class="py-4 px-6 border-t border-grey-light">Rp{{ number_format($product->price) }}</td>
                 <td class="py-4 px-6 border-t border-grey-light">
                     @if($product->is_ready == 1)
                         Ready Stock

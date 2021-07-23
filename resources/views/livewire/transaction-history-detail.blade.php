@@ -67,7 +67,13 @@
                                     </td>
                                     <td class="py-4 px-6 border-t border-grey-light">
                                         @foreach($products as $product)
-                                            {{ $product->name }} </strong> - Size: <strong>{{ $order_detail->size }}</strong></p>
+                                            {{ $product->name }} </strong> - Size: <strong>{{ $order_detail->size }}</strong><br>
+                                            <br>Catatan:
+                                                @if (!empty($order_detail->note) )
+                                                    {{ $order_detail->note }}
+                                                @else
+                                                    -
+                                                @endif
                                         @endforeach
                                     </td>
                                     <td class="border-t text-center">
